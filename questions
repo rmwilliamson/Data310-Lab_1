@@ -1,0 +1,15 @@
+# Question 2
+## Write a Python code to import the data file 'L1data.csv' (introduced in Lecture 1) and code an imputation for replacing the NaN values in the "Age" column with the median of the column. The NaN instances are replaced by
+
+import pandas as pd
+import numpy as np
+from google.colab import drive
+drive.mount('/content/drive')
+
+data = pd.read_csv('L1Data.csv')
+
+from sklearn.impute import SimpleImputer
+imp = SimpleImputer(missing_values=np.nan,strategy='median')
+imp.fit(data.loc[:,["Age"]])
+data.loc[:,["Age"]] = imp.transform(data.loc[:,["Age"]])
+
