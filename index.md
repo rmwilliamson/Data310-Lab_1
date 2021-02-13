@@ -46,7 +46,6 @@ import matplotlib.pyplot as plt
 
 doors = ["goat","goat", "goat", "car"]
 
-# approximated results
 switch_win_probability = []
 stick_win_probability = []
 
